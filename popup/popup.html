@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+    <style>
+    body {
+        min-width:300px;
+        overflow: scroll;
+    }
+    .hidden{
+        display: none;
+    }
+    .delete,.update,.plan_time,.rate,.real_time{
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <button class="button-primary js-tab-btn" data-category="work">work</button>
+    <button class="button-primary js-tab-btn" data-category="task">task</button>
+    <button class="button-primary js-tab-btn" data-category="time">time</button>
+
+    <div class="js-tab hidden" data-category="work">
+        <h2>work</h2>
+        <form action="" data-category="work">
+            <input type="hidden" name="type" value="work">
+            <input type="text" name="work_name" required>
+            <br>
+            <input type="submit" value="決定">
+        </form>
+        <ul data-category="work"></ul>
+        <hr />
+    </div>
+    <div class="js-tab hidden" data-category="task">
+        <h2>task</h2>
+        <form action="" data-category="task">
+            <input type="hidden" name="type" value="task">
+            work<select name="work_id" id="work" required></select>
+            <br>
+            <input type="text" name="task_name" required>
+            <br>
+            予定<input type="number" name="plan_time" step="0.1" required>
+            <br>
+            進捗<input type="number" name="rate" required>
+            <br>
+            <input type="submit" value="決定">
+        </form>
+        <ul data-category="task"></ul>
+        <hr />
+    </div>
+    <div class="js-tab hidden" data-category="time">
+        <h2>time</h2>
+        <form action="" data-category="time">
+            <input type="hidden" name="type" value="time">
+            task<select name="task_id" id="task" required></select>
+            時間<input type="number" name="real_time" step="0.1" required>
+            <input type="submit" value="決定">
+        </form>
+        <ul data-category="time"></ul>
+        <hr />
+    </div>
+    <script src="./popup.bundle.js"></script>
+</body>
+</html>

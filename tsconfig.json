@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "lib": ["es5", "es2015", "dom", "scripthost"],
+        "outDir": "./dist/",
+        "noImplicitAny": true,
+        "module": "es6",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "downlevelIteration": true
+    }
+}
